@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Minimal BubbleTree Demo</title>
+	<script type="text/javascript" src="lib/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.history.js"></script>
+	<script type="text/javascript" src="lib/raphael.js"></script>
+	<script type="text/javascript" src="lib/vis4.js"></script>
+	<script type="text/javascript" src="lib/Tween.js"></script>
+	<script type="text/javascript" src="build/bubbletree.js"></script>
+	<link rel="stylesheet" type="text/css" href="build/bubbletree.css" />
+	<script type="text/javascript" src="styles/cofog.js"></script>
+	
+	
+	<script type="text/javascript">
+       
+		$(function() {
+		
+            var data ={"amount": 13891479086.449999, "children": [{"color": "#aad926", "amount": 2916600000.0, "children": [{"amount": 1050000000.0, "label": "Reforma do Estádio Mário Filho (Maracanã)"}, {"amount": 1582200000.0, "label": "BRT Transcarioca (Aeroporto / Penha / Barra)"}, {"amount": 109600000.0, "label": "Entorno do Estádio do Maracanã: Projeto de Reurbanização do Entorno do Estádio do Maracanã e Ligação com a Quinta da Boa Vista - 1ª Fase"}, {"amount": 174800000.0, "label": "Entorno do Estádio do Maracanã: Reformulação e Modernização da Estação Multimodal do Maracanã"}], "label": "Rio de Janeiro"}, {"color": "#d95d26", "amount": 710024335.61000001, "children": [{"amount": 689400000.0, "label": "Reconstrução do Estádio da Fonte Nova"}, {"amount": 13474335.61, "label": "Entorno Estádio Fonte Nova: Microacessibilidade"}, {"amount": 7150000.0, "label": "Entorno Estádio Fonte Nova: rotas de Pedestres"}], "label": "Salvador"}, {"color": "#d99026", "amount": 1368507000.0, "children": [{"amount": 820000000.0, "label": "Construção da Arena São Paulo (Itaquera)"}, {"amount": 548507000.0, "label": "Intervenções Viárias no entorno do Polo de  Desenvolvimento da Zona Leste"}], "label": "São Paulo"}, {"color": "#d99626", "amount": 1447500000.0, "children": [{"amount": 1403300000.0, "label": "Reforma do Estádio Nacional de Brasília"}, {"amount": 44200000.0, "label": "Ampliação da DF-047"}], "label": "Brasília"}, {"color": "#d9d726", "amount": 2289500000.0, "children": [{"amount": 570100000.0, "label": "Construção da Arena Multiuso Pantanal"}, {"amount": 46000000.0, "label": "Corredor Mário Andreazza"}, {"amount": 1577600000.0, "label": "VLT: Cuiabá / Várzea Grande"}, {"amount": 95800000.0, "label": "Adequação Viária e Obras de Acessibilidade à Arena Multiuso Pantanal"}], "label": "Cuiabá"}, {"color": "#d96326", "amount": 792900000.0, "children": [{"amount": 326700000.0, "label": "Complexo Esportivo Curitiba 2014 (Reforma e Ampliação do Estádio)"}, {"amount": 131700000.0, "label": "Corredor Aeroporto / Rodoferroviária - Trecho Municipal"}, {"amount": 61600000.0, "label": "Sistema Integrado de Monitoramento - Trecho Municipal"}, {"amount": 48900000.0, "label": "Requalificação da Rodoferroviária (inclusive acessos)"}, {"amount": 24200000.0, "label": "BRT: Extensão da Linha Verde Sul e Obras Complementares da Requalificação do Corredor Marechal Floriano"}, {"amount": 12600000.0, "label": "Requalificação do Terminal Santa Cândida (reforma e ampliação)"}, {"amount": 23400000.0, "label": "Requalificação do Corredor Marechal Floriano - Trecho Estadual"}, {"amount": 53300000.0, "label": "Vias de Integração Radial Metropolitanas"}, {"amount": 20400000.0, "label": "Sistema Integrado de Monitoramento - Trecho Metropolitano"}, {"amount": 38600000.0, "label": "Requalificação do Corredor Marechal Floriano - Trecho Municipal"}, {"amount": 51500000.0, "label": "Corredor Aeroporto / Rodoferroviária - Trecho Estadual"}], "label": "Curitiba"}, {"color": "#d97826", "amount": 1055554557.98, "children": [{"amount": 518606000.0, "label": "Reforma do Estádio Governador Plácido Castelo (Castelão)"}, {"amount": 275448557.98, "label": "VLT: Parangaba/Mucuripe"}, {"amount": 151600000.0, "label": "Eixo Via Expressa/Raul Barbosa"}, {"amount": 41600000.0, "label": "BRT Avenida Dedé Brasil"}, {"amount": 33700000.0, "label": "BRT Avenida Alberto Craveiro"}, {"amount": 34600000.0, "label": "BRT Avenida Paulino Rocha"}, {"amount": NaN, "label": "Estações Padre Cícero e Juscelino Kubitschek"}], "label": "Fortaleza"}, {"color": "#d95a26", "amount": 669500000.0, "children": [{"amount": 669500000.0, "label": "Reconstrução da Arena da Amazônia"}], "label": "Manaus"}, {"color": "#d96926", "amount": 872247996.91000009, "children": [{"amount": 400000000.0, "label": "Construção da Arena das Dunas"}, {"amount": 73100000.0, "label": "Acesso ao Novo Aeroporto de São Gonçalo do Amarante"}, {"amount": 370947996.91, "label": "Corredor Estruturante – Zona Norte/Estádio Arena das Dunas"}, {"amount": 28200000.0, "label": "Eixo 2: Implantação da Via Prudente de Morais"}], "label": "Natal"}, {"color": "#d94126", "amount": 345872222.22000003, "children": [{"amount": 330000000.0, "label": "Reforma do Estádio Beira Rio"}, {"amount": 8000000.0, "label": "Entorno Beira Rio: 3 Vias de Acesso"}, {"amount": 7872222.22, "label": "Projeto de Pavimentação do Entorno do  Estádio Beira-Rio"}], "label": "Porto Alegre"}, {"color": "#d99426", "amount": 1423272973.73, "children": [{"amount": 532600000.0, "label": "Construção da Arena Pernambuco"}, {"amount": 137000000.0, "label": "BRT: Leste/Oeste - Ramal Cidade da Copa"}, {"amount": 180900000.0, "label": "BRT: Norte / Sul - Trecho Igarassu / Tacaruna / Centro do Recife"}, {"amount": 88100000.0, "label": "Corredor Caxangá (Leste-Oeste)"}, {"amount": 433202973.73, "label": "Corredor da Via Mangue"}, {"amount": 19100000.0, "label": "Metrô: Terminal Cosme e Damião"}, {"amount": 25000000.0, "label": "Entorno Arena Pernambuco: Viaduto da BR-408"}, {"amount": 7370000.0, "label": "Entorno Arena Pernambuco: Estação de metrô Cosme e Damião"}], "label": "Recife"}], "label": "Total gasto em Estádios e Mobilidade"};
+
+			new BubbleTree({
+				data: data,
+				container: '.bubbletree'
+			});
+		
+			
+		});
+                                        
+	</script>
+</head>
+<body>
+	<div class="bubbletree-wrapper">
+		<div class="bubbletree"></div>
+	</div>
+</body>
+</html>
